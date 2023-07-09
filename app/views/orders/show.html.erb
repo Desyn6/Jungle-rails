@@ -18,7 +18,13 @@
       </thead>
       <tbody>
       <% @order.line_items.each do |item| %>
-        <%= render 'line_item', line_item: item %>
+        <%= render 'line_item', 
+          image_url: item.product.image.tiny.url,
+          name: item.product.name,
+          description: item.product.description,
+          price: item.product.price,
+          quantity: item.quantity
+        %>
       <% end %>
       </tbody>
       <tfoot>
